@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
@@ -23,4 +25,35 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* global  */
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-color: #111;
+  overflow: hidden;
+  filter: url("#goo");
+}
+
+.hooksMain {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.ball {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #ff6d6d;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff6d6d;
+  will-change: transform;
+  touch-action: none;
+  user-select: none;
 }
