@@ -17,7 +17,7 @@ export default function Navbar() {
                       backdrop-blur-md border border-white/10 rounded-lg"
       >
         {/* Logo */}
-        <Link href="/" aria-label="Home" className="shrink-0">
+        <Link href="#" aria-label="Home" className="shrink-0">
           <Image
             src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/679730756024f0575fc9327f_Mz%20media%20logo.avif"
             alt="Brand Logo"

@@ -1,91 +1,3 @@
-// // 'use client' is required for Framer Motion in App Router
-// "use client";
-
-// import { motion } from "framer-motion";
-// import Image from "next/image";
-// import Link from "next/link";
-
-// export default function HeroSection() {
-//   return (
-//     <section
-//       className="relative w-full min-h-screen bg-cover bg-center flex items-center justify-center px-4 py-16 md:py-32"
-//       style={{
-//         backgroundImage: "url('https://cdn.prod.website-files.com/6796419e2d5f03877896246e/679651def5e214bba9495e68_Hero%20Glow%20BG-p-2000.webp')",
-//       }}
-//     >
-//       <div className="max-w-7xl mx-auto w-full text-center text-white">
-//         {/* Header Text */}
-//         <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-6">
-//           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-//             <span className=" font-syne">
-//               <span className="text-white">
-//                 Get More Leads <br />
-//                 Using{" "}
-//               </span>
-//             </span>
-//             <span className="text-white"> Quality Video Content</span>
-//           </h1>
-//         </motion.div>
-
-//         {/* Subtitle */}
-//         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} className="mb-8">
-//           <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
-//             We help entrepreneurs and businesses with Done-For-You organic content systems that generate leads on autopilot.
-//           </p>
-//         </motion.div>
-
-//         {/* Team Images */}
-//         <motion.div
-//           initial={{ opacity: 0, y: 30 }}
-//           whileInView={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.8, delay: 0.3 }}
-//           className="flex flex-wrap justify-center items-center gap-4 mb-6"
-//         >
-//           {teamImages.map((src, i) => (
-//             <div key={i} className="w-16 h-16 md:w-20 md:h-20 overflow-hidden rounded-full">
-//               <Image src={src} alt="Client Photo" width={80} height={80} className="object-cover w-full h-full" />
-//             </div>
-//           ))}
-//         </motion.div>
-
-//         {/* Client Text */}
-//         <div className="text-sm md:text-base text-white/80 mb-6">
-//           <p>Loved by 500+ Businesses worldwide.</p>
-//           <p>Our Clients Speak for Us</p>
-//         </div>
-
-//         {/* Button */}
-//         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
-//           <Link
-//             href="#book-a-call"
-//             className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-md font-semibold hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition"
-//           >
-//             Book a Call
-//             <Image
-//               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67970745c860818130bc7fd6_Arrow_Up_Right.svg"
-//               width={20}
-//               height={20}
-//               alt="Arrow Icon"
-//             />
-//           </Link>
-//         </motion.div>
-//       </div>
-
-//       {/* Optional dark overlay */}
-//       <div className="absolute inset-0 bg-black/30 z-0" />
-//     </section>
-//   );
-// }
-
-// const teamImages = [
-//   "https://cdn.prod.website-files.com/6796419e2d5f03877896246e/68039aedeb4bf0f0e7b3ab65_0x0.webp",
-//   "https://cdn.prod.website-files.com/6796419e2d5f03877896246e/68039af1ab8b6374769d4021_channels4_profile%20(1).jpg",
-//   "https://cdn.prod.website-files.com/6796419e2d5f03877896246e/6796419e2d5f0387789624ae_Client%20Photo%201.webp",
-//   "https://cdn.prod.website-files.com/6796419e2d5f03877896246e/68039af8dc4ee14f99625623_channels4_profile%20(3).avif",
-//   "https://cdn.prod.website-files.com/6796419e2d5f03877896246e/68039af40f8de0d527df7ffd_channels4_profile%20(2).avif",
-//   "https://cdn.prod.website-files.com/6796419e2d5f03877896246e/680357673bf2451641c3e59e_49450176611_d46ff738a1.avif",
-// ];
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -97,7 +9,7 @@ import TiltController from "../TiltController/TiltController";
 export default function HeroSection() {
   return (
     <section
-      className="relative w-full min-h-screen bg-cover  flex items-center justify-center px-4 py-16 md:py-32 bg-top"
+      className="relative w-full min-h-screen bg-cover  flex items-center justify-center px-4 pt-16 pb-14 md:pt-32 bg-top"
       style={{
         backgroundImage: "url('https://cdn.prod.website-files.com/6796419e2d5f03877896246e/679651def5e214bba9495e68_Hero%20Glow%20BG-p-2000.webp')",
       }}

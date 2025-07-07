@@ -1,14 +1,18 @@
 import AnimatedSection from "@/components/AnimatedSection/AnimatedSection";
+
 import HeroSection from "@/components/HeroSection/HeroSection";
 import Navbar from "@/components/Navbar/Navbar";
+
+import ScrollAnimationSection from "@/components/ScrollAnimationSection/ScrollAnimationSection";
 
 import React from "react";
 
 function page() {
   return (
     <div>
-      <Navbar />
+      <Navbar id="#" />
       <HeroSection></HeroSection>
+      <ScrollAnimationSection></ScrollAnimationSection>
       <AnimatedSection id="testimonial">Section 1: Testimonial</AnimatedSection>
       <AnimatedSection id="work">Section 2: Work</AnimatedSection>
       <AnimatedSection id="case-study">Section 3: Case Study</AnimatedSection>
