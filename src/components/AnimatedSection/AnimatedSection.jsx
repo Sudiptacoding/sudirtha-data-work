@@ -9,7 +9,7 @@ export default function AnimatedSection({ id, children }) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.3 }}
-      className="pt-24 px-4 min-h-screen"
+      className="bg-black"
     >
       {children}
     </motion.section>

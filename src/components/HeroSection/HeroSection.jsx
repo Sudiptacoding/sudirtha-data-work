@@ -39,7 +39,7 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Team Images */}
-        <div className="flex items-center justify-center pb-10">
+        <div className="flex items-center justify-center pb-10 md:flex-row flex-col">
           {/* Images stacked with overlap */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -58,11 +58,13 @@ export default function HeroSection() {
             ))}
           </motion.div>
 
-          {/* Text Content */}
-          <div className="text-white/90 max-w-xl text-left">
-            <p className="text-sm">Loved by 500+ Businesses worldwide.</p>
-            <p className="mt-1 text-sm text-[#8b8e97]">Our Clients Speak for Us</p>
-          </div>
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="">
+            {/* Text Content */}
+            <div className="text-white/90 max-w-xl text-left">
+              <p className="text-sm">Loved by 500+ Businesses worldwide.</p>
+              <p className="mt-1 text-sm text-[#8b8e97]">Our Clients Speak for Us</p>
+            </div>
+          </motion.div>
         </div>
 
         {/* Button */}
@@ -90,7 +92,10 @@ export default function HeroSection() {
           className="max-w-4xl mx-auto"
         >
           <TiltController>
-            <VideoThumbnail />
+            <VideoThumbnail
+              thamnailURL="https://embed-ssl.wistia.com/deliveries/d70c018134211b2cef054003cd784398.webp?image_crop_resized=1920x1080"
+              VideoURL="https://www.youtube.com/embed/xVqZ6ZSeMW4?si=C0jmHz5yMCQE15kE"
+            />
           </TiltController>
         </motion.div>
       </div>

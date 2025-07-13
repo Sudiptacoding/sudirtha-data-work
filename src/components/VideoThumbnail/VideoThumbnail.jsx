@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 
-export default function VideoThumbnail() {
+export default function VideoThumbnail({ thamnailURL, VideoURL }) {
+  console.log(thamnailURL, VideoURL);
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
@@ -14,7 +15,7 @@ export default function VideoThumbnail() {
         <>
           {/* Custom Thumbnail Image */}
           <img
-            src="https://embed-ssl.wistia.com/deliveries/d70c018134211b2cef054003cd784398.webp?image_crop_resized=1920x1080"
+            src={thamnailURL}
             alt="Video Thumbnail"
             className="absolute top-0 left-0 w-full h-full object-cover rounded-lg"
             onClick={() => setIsPlaying(true)}
@@ -34,7 +35,7 @@ export default function VideoThumbnail() {
           {/* YouTube iframe */}
           <iframe
             className="absolute top-0 left-0 w-full h-full rounded-lg"
-            src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1"
+            src={VideoURL}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
