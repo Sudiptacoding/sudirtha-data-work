@@ -12,15 +12,16 @@
     "@react-spring/parallax": "^10.0.1",
     "@react-spring/web": "^10.0.1",
     "framer-motion": "^12.19.1",
+    "lottie-react": "^2.4.1",
     "next": "15.3.4",
     "react": "^19.0.0",
     "react-countup": "^6.5.3",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
-    "react-intersection-observer": "^9.16.0",
     "react-joystick-component": "^6.2.1",
     "react-parallax": "^3.5.2",
     "react-parallax-tilt": "^1.7.298",
+    "react-use": "^17.6.0",
     "react-use-measure": "^2.1.7"
   },
   "devDependencies": {

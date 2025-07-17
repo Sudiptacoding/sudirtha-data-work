@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import CountUp from "react-countup";
+import SmartCount from "@/common/SmartCount/SmartCount";
 
 export default function AnimatedParallaxSection() {
   const sectionRef = useRef(null);
@@ -88,7 +89,7 @@ export default function AnimatedParallaxSection() {
         {/* Block 1 */}
         <div className="w-[120px] md:w-[192px] text-white flex flex-col items-center md:items-start relative">
           <div className="text-2xl md:text-4xl font-bold font-geist text-center md:text-left">
-            <CountUp end={200} duration={3} separator="," enableScrollSpy={true} scrollSpyOnce={true} />
+            <SmartCount end={200} duration={5} />
             <span className="text-xl md:text-3xl ml-1">%</span>
           </div>
           <p className="text-white text-sm md:text-base mt-3 font-syne pl-[0px] md:pl-[48px] text-right md:text-left w-full">More Engagement</p>
@@ -98,7 +99,7 @@ export default function AnimatedParallaxSection() {
         {/* Block 2 */}
         <div className="w-[120px] md:w-[192px] text-white flex flex-col items-center md:items-start relative">
           <div className="text-2xl md:text-4xl font-bold font-geist text-center md:text-left">
-            <CountUp end={5} duration={3} separator="," enableScrollSpy={true} scrollSpyOnce={true} />
+            <SmartCount end={5} duration={5} />
             <span className="text-xl md:text-3xl ml-1">X</span>
           </div>
           <p className="text-white text-sm md:text-base mt-3 font-syne pl-[0px] md:pl-[48px] text-right md:text-left w-full">More Reach</p>
@@ -108,13 +109,14 @@ export default function AnimatedParallaxSection() {
         {/* Block 3 */}
         <div className="w-[120px] md:w-[192px] text-white flex flex-col items-center md:items-start relative">
           <div className="text-2xl md:text-4xl font-bold font-geist text-center md:text-left">
-            <CountUp end={50} duration={3} separator="," enableScrollSpy={true} scrollSpyOnce={true} />
+            <SmartCount end={50} duration={5} />
             <span className="text-xl md:text-3xl ml-1">%</span>
           </div>
           <p className="text-white text-sm md:text-base mt-3 font-syne pl-[0px] md:pl-[48px] text-right md:text-left w-full">More Leads</p>
           <p className="text-[#999999] hidden md:block text-left text-sm md:text-base mt-3 font-syne w-full">Automated Systems</p>
         </div>
       </section>
+
       <div className="border-[#ffffff0f] border-b-2 pt-4 max-w-4xl mx-auto"></div>
 
       <div className="pt-16 px-4 sm:px-6 lg:px-8 bg-black text-center text-white">

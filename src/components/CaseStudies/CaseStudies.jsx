@@ -100,14 +100,14 @@ function CaseStudies() {
             {/* Button */}
             <a
               href="#book-a-call"
-              className="inline-flex items-center gap-2 bg-[#4355e4] hover:bg-[#273fb7] text-white font-semibold px-6 py-3 rounded-lg transition duration-300"
+              className="inline-flex items-center gap-2 bg-[#4355e4] hover:bg-[#273fb7] text-white font-semibold px-[25px] py-[14px] rounded-lg transition duration-300"
             >
               <div>Book a call</div>
               <img
                 loading="lazy"
                 src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67970745c860818130bc7fd6_Arrow_Up_Right.svg"
                 alt="Arrow icon"
-                className="w-5 h-5"
+                className="w-[26px] h-[26px] bg-[#a8a9cf3b] rounded-full p-2"
               />
             </a>
           </div>
