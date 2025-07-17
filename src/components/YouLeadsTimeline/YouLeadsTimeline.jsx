@@ -4,9 +4,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import TextSwitcher from "@/common/TextSwitcher/TextSwitcher";
 
-import { useInView } from "react-intersection-observer";
 import Lottie from "lottie-react";
-import animationData from "./../../../public/lottie/step5-animation.json";
+import animationData from "@/data/step5-animation.json";
 
 function YouLeadsTimeline() {
   const [activeStep, setActiveStep] = useState(1);
