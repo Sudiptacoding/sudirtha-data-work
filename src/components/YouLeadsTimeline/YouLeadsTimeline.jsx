@@ -5,7 +5,7 @@ import { useScroll, useTransform, motion } from "framer-motion";
 import TextSwitcher from "@/common/TextSwitcher/TextSwitcher";
 
 import Lottie from "lottie-react";
-import animationData from "@/data/step5-animation.json";
+import animationData from "../../data/step5-animation.json";
 
 function YouLeadsTimeline() {
   const [activeStep, setActiveStep] = useState(1);
