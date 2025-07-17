@@ -10,6 +10,66 @@ import animationData from "../../data/step5-animation.json";
 function YouLeadsTimeline() {
   const [activeStep, setActiveStep] = useState(1);
   const stepsRef = useRef([]);
+  const [inView, setInView] = useState(false);
+  const ref = useRef(null);
+  const containerRef = useRef(null);
+
+  // Step 1
+  const step1Ref = useRef(null);
+  const { scrollYProgress: step1Scroll } = useScroll({
+    target: step1Ref,
+    offset: ["start end", "end start"],
+  });
+
+  // Step 2
+  const step2Ref = useRef(null);
+  const { scrollYProgress: step2Scroll } = useScroll({
+    target: step2Ref,
+    offset: ["start end", "end start"],
+  });
+  // Step 3
+  const step3Ref = useRef(null);
+  const { scrollYProgress: step3Scroll } = useScroll({
+    target: step3Ref,
+    offset: ["start end", "end start"],
+  });
+  // Step 4
+  const step4Ref = useRef(null);
+  const { scrollYProgress: step4Scroll } = useScroll({
+    target: step4Ref,
+    offset: ["start end", "end start"],
+  });
+
+  const lineHeightMap = {
+    1: "h-[100px]",
+    2: "h-[250px]",
+    3: "h-[400px]",
+    4: "h-[550px]",
+  };
+
+  // Tag animations: Upward tags move outward
+  const tag1X = useTransform(step1Scroll, [0, 1], ["0%", "50%"]);
+  const tag1Y = useTransform(step1Scroll, [0, 1], ["0%", "50%"]);
+  const tag2X = useTransform(step1Scroll, [0, 1], ["0%", "-60%"]);
+  const tag2Y = useTransform(step1Scroll, [0, 1], ["40%", "0%"]);
+
+  // Step 2
+  const tag3X = useTransform(step2Scroll, [0, 0.5, 1], ["40%", "45%", "40%"]);
+  const tag3Y = useTransform(step2Scroll, [0, 1], ["-15%", "0%"]);
+
+  // Step 3
+  const tag4X = useTransform(step3Scroll, [0, 0.5, 1], ["30%", "30%", "30%"]);
+  const tag4Y = useTransform(step3Scroll, [0, 0.5, 1], ["0%", "10%", "35%"]);
+  const tag5X = useTransform(step3Scroll, [0, 0.5, 1], ["130%", "157%", "130%"]);
+  const tag5Y = useTransform(step3Scroll, [0, 0.5, 1], ["17%", "11%", "17%"]);
+
+  // Step 4
+  const tag8X = useTransform(step4Scroll, [0, 0.5, 1], ["135%", "137%", "135%"]);
+  const tag8Y = useTransform(step4Scroll, [0, 0.5, 1], ["-20%", "-95%", "-20%"]);
+  const img1X = useTransform(step4Scroll, [0, 1], ["-100%", "40%"]);
+  const img2X = useTransform(step4Scroll, [0, 1], ["0%", "160%"]);
+  const img1Rotate = useTransform(step4Scroll, [0, 1], [0, 0]);
+  const img2Rotate = useTransform(step4Scroll, [0, 1], [0, -12]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,50 +93,6 @@ function YouLeadsTimeline() {
       });
     };
   }, []);
-
-  const lineHeightMap = {
-    1: "h-[100px]",
-    2: "h-[250px]",
-    3: "h-[400px]",
-    4: "h-[550px]",
-  };
-
-  const ref = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-
-  // Tag animations: Upward tags move outward
-  const tag1X = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const tag1Y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-
-  const tag2X = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
-  const tag2Y = useTransform(scrollYProgress, [0, 1], ["40%", "0%"]);
-
-  // Step 2
-  const tag3X = useTransform(scrollYProgress, [0, 0.5, 1], ["40%", "45%", "40%"]);
-  const tag3Y = useTransform(scrollYProgress, [0, 1], ["-15%", "0%"]);
-
-  // Step 3
-
-  const tag4X = useTransform(scrollYProgress, [0, 0.5, 1], ["30%", "30%", "30%"]);
-  const tag4Y = useTransform(scrollYProgress, [0, 0.5, 1], ["0%", "10%", "35%"]);
-
-  const tag5X = useTransform(scrollYProgress, [0, 0.5, 1], ["130%", "157%", "130%"]);
-  const tag5Y = useTransform(scrollYProgress, [0, 0.5, 1], ["17%", "11%", "17%"]);
-
-  const tag8X = useTransform(scrollYProgress, [0, 0.5, 1], ["135%", "137%", "135%"]);
-  const tag8Y = useTransform(scrollYProgress, [0, 0.5, 1], ["-20%", "-95%", "-20%"]);
-
-  const containerRef = useRef(null);
-  const img1X = useTransform(scrollYProgress, [0, 1], ["-100%", "40%"]);
-  const img2X = useTransform(scrollYProgress, [0, 1], ["0%", "160%"]);
-  const img1Rotate = useTransform(scrollYProgress, [0, 1], [0, 0]);
-  const img2Rotate = useTransform(scrollYProgress, [0, 1], [0, -12]);
-
-  const [inView, setInView] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -127,7 +143,7 @@ function YouLeadsTimeline() {
           </p>
         </div>
         <div
-          ref={ref}
+          ref={step1Ref}
           className="order-3 md:order-3 w-full md:w-1/2 text-center md:text-right flex flex-col items-center md:items-end relative
                pb-[320px] md:pb-0"
         >
@@ -175,7 +191,7 @@ function YouLeadsTimeline() {
           02
         </div>
         <div
-          ref={ref}
+          ref={step2Ref}
           className="order-2 md:order-1 w-full md:w-1/2 text-center md:text-left flex flex-col items-center md:items-start relative pb-[320px] md:pb-0"
         >
           <img
@@ -257,7 +273,7 @@ function YouLeadsTimeline() {
           </p>
         </div>
         <div
-          ref={ref}
+          ref={step3Ref}
           className="order-3 md:order-3 w-full md:w-1/2 text-center md:text-right flex flex-col items-center md:items-end relative
                pb-[320px] md:pb-0"
         >
@@ -292,6 +308,7 @@ function YouLeadsTimeline() {
       </div>
 
       {/* STEP-4  */}
+
       <div
         ref={(el) => (stepsRef.current[3] = el)}
         className="flex flex-col md:flex-row items-start justify-between mb-16 relative z-10 text-white gap-6"
@@ -304,7 +321,10 @@ function YouLeadsTimeline() {
           04
         </div>
 
-        <div ref={ref} className="order-2 md:order-1 w-full md:w-1/2 text-center md:text-left flex flex-col items-center md:items-start relative ">
+        <div
+          ref={step4Ref}
+          className="order-2 md:order-1 w-full md:w-1/2 text-center md:text-left flex flex-col items-center md:items-start relative "
+        >
           <img
             src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b5dd36b3452df31baf9345_Glow.avif"
             alt="Glow"
