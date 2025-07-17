@@ -19,7 +19,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="#" aria-label="Home" className="shrink-0">
           <Image
-            src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/679730756024f0575fc9327f_Mz%20media%20logo.avif"
+            src="https://i.postimg.cc/Zn3vTDG0/Chat-GPT-Image-Jul-17-2025-12-48-32-PM-2-removebg-preview.png"
             alt="Brand Logo"
             width={120}
             height={40}

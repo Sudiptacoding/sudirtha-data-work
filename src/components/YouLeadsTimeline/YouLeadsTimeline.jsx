@@ -68,18 +68,6 @@ function YouLeadsTimeline() {
   const tag5X = useTransform(scrollYProgress, [0, 0.5, 1], ["130%", "157%", "130%"]);
   const tag5Y = useTransform(scrollYProgress, [0, 0.5, 1], ["17%", "11%", "17%"]);
 
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const updateSize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    updateSize(); // প্রথমবার রেন্ডারেও চেক করো
-    window.addEventListener("resize", updateSize);
-    return () => window.removeEventListener("resize", updateSize);
-  }, []);
-
   const tag8X = useTransform(scrollYProgress, [0, 0.5, 1], ["135%", "137%", "135%"]);
   const tag8Y = useTransform(scrollYProgress, [0, 0.5, 1], ["-20%", "-95%", "-20%"]);
 
@@ -283,13 +271,13 @@ function YouLeadsTimeline() {
             src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b5dd368a7f0840c7932011_icon%201.avif"
             alt="Tag 1"
             className="w-[170px] absolute z-10 md:left-44 left-36 top-0 md:-top-12 rounded-full "
-            style={!isMobile ? { x: tag4X, y: tag4Y, rotate: 0 } : { rotate: 0 }}
+            style={{ x: tag4X, y: tag4Y, rotate: 0 }}
           />
           <motion.img
             src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b5dd36ed14bc9ea8341c97_icon%202.avif"
             alt="Tag 2"
-            className="w-[110px] absolute md:right-32 right-11 top-32 md:top-20 z-10 rounded-full "
-            style={!isMobile ? { x: tag5X, y: tag5Y, rotate: 17 } : { rotate: 17 }}
+            className="w-[110px] absolute md:right-32 right-11 md:block hidden top-32 md:top-20 z-10 rounded-full "
+            style={{ x: tag5X, y: tag5Y, rotate: 17 }}
           />
           <img
             src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b73326861ecd43aa1089d3_tag%203.avif"
@@ -305,11 +293,10 @@ function YouLeadsTimeline() {
       </div>
 
       {/* STEP-4  */}
-      {/* <div
+      <div
         ref={(el) => (stepsRef.current[3] = el)}
         className="flex flex-col md:flex-row items-start justify-between mb-16 relative z-10 text-white gap-6"
       >
-  
         <div
           className="order-1 md:order-2 flex justify-center items-center w-[80px] h-[80px] md:h-[70px] rounded-full
     border border-[#2c3138] bg-gradient-to-b from-[#181929] to-[#020205]
@@ -318,18 +305,14 @@ function YouLeadsTimeline() {
           04
         </div>
 
-      
         <div ref={ref} className="order-2 md:order-1 w-full md:w-1/2 text-center md:text-left flex flex-col items-center md:items-start relative ">
-     
           <img
             src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b5dd36b3452df31baf9345_Glow.avif"
             alt="Glow"
             className="w-full absolute -top-44 md:left-8 left-0 z-0 opacity-100"
           />
 
-  
           <div ref={containerRef} className="relative w-full h-[300px] md:h-[400px] overflow-hidden rounded-xl ">
-      
             <motion.img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67debd0be7a053c01e6bb522_Iman%20gadzhi.avif"
               alt="Iman"
@@ -337,7 +320,6 @@ function YouLeadsTimeline() {
               style={{ x: img1X, rotate: img1Rotate }}
             />
 
-          
             <motion.img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67debd0bb9bcdeb6007467cb_Ali%20abdaal%202.avif"
               alt="Ali"
@@ -345,26 +327,21 @@ function YouLeadsTimeline() {
               style={{ x: img2X, rotate: img2Rotate }}
             />
 
-         
             <div className="absolute left-0 top-0 h-full w-1/3 bg-gradient-to-l from-transparent to-black/80 rounded-md z-30 pointer-events-none" />
 
-       
             <div className="absolute rounded-md right-0 top-0 h-full w-1/3 bg-gradient-to-r from-transparent to-black/80 z-30 pointer-events-none" />
 
-        
             <div className="absolute inset-0 bg-gradient-to-l from-black/60 via-transparent to-black/60 z-20 pointer-events-none" />
           </div>
 
-   
           <motion.img
             src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b707fc23c7175ae432a4ca_Thumbnail%20icon.avif"
             alt="Thumbnail"
             className="w-32 h-32 absolute z-10 hidden md:block"
-            style={!isMobile ? { x: tag8X, y: tag8Y, rotate: 12 } : { rotate: 12 }}
+            style={{ x: tag8X, y: tag8Y, rotate: 12 }}
           />
         </div>
 
-   
         <div className="order-3 md:order-3 w-full md:w-1/2 md:pl-28 text-center md:text-left">
           <div className="flex flex-col gap-[27px] rounded-[20px] py-[30px] w-full max-w-[350px] items-center md:items-start mx-auto md:ml-auto">
             <div className="uppercase bg-[#3636ff] rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)] text-center md:text-left">
@@ -378,10 +355,11 @@ function YouLeadsTimeline() {
             </p>
           </div>
         </div>
-      </div> */}
+      </div>
 
-      {/* <div ref={ref} className="flex flex-col md:flex-row items-start justify-between mb-24 relative z-10 text-white gap-6">
-  
+      {/* STEP-5  */}
+
+      <div ref={ref} className="flex flex-col md:flex-row items-start justify-between mb-24 relative z-10 text-white gap-6">
         <div
           className="order-1 md:order-2 flex justify-center items-center w-[80px] h-[80px] md:h-[70px] rounded-full
       border border-[#2c3138] bg-gradient-to-b from-[#181929] to-[#020205]
@@ -390,23 +368,19 @@ function YouLeadsTimeline() {
           05
         </div>
 
-       
         <div className="order-2 md:order-3 w-full md:w-1/2 text-center md:text-right flex flex-col items-center md:items-end relative pb-[320px] md:pb-0">
-    
           <img
             src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b5dd36b3452df31baf9345_Glow.avif"
             alt="Glow"
             className="w-full absolute -top-20 md:left-16 left-0 z-0 opacity-100"
           />
 
-          
           {inView && (
             <div className="absolute bottom-10 left-6 md:-bottom-28 md:left-24 w-40 h-32 z-0 rotate-12 pointer-events-none">
               <Lottie animationData={animationData} loop={false} />
             </div>
           )}
 
-         
           <img
             src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b6fea4de667cb6f255f2a2_view%20icon.avif"
             alt="Tag 3"
@@ -415,7 +389,7 @@ function YouLeadsTimeline() {
           <img
             src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b6fddc63aa60dafdeff726_you%20tube%20icon-1.avif"
             alt="Tag 4"
-            className="w-[70px] md:w-[90px] absolute md:-bottom-[254px] bottom-20 right-10 md:right-52 rounded-full shadow-[0_9px_20px_-2px_#366cff91]"
+            className="w-[70px] md:w-[90px] absolute md:-bottom-[254px] bottom-10 right-24 md:right-52 rounded-full shadow-[0_9px_20px_-2px_#366cff91]"
           />
           <img
             src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b731d891c16c44b9310086_Group%201618874258.avif"
@@ -425,11 +399,10 @@ function YouLeadsTimeline() {
           <img
             src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b6fe2b0c2c7cfd9f95e99a_you%20tube%20icon.avif"
             alt="Tag 4"
-            className="w-[100px] md:w-[150px] absolute bottom-24 md:-bottom-20 right-10 md:-right-24 rounded-full"
+            className="w-[100px] md:w-[150px] absolute bottom-36 md:-bottom-20 right-28 md:-right-24 rounded-full"
           />
         </div>
 
-    
         <div className="order-3 md:order-1 w-full md:w-1/2 md:pr-10 text-center md:text-left">
           <div className="flex flex-col gap-[27px] rounded-[20px] py-[30px] w-full max-w-[350px] items-center md:items-start mx-auto md:mx-0">
             <div className="uppercase bg-[#3636ff] hidden md:block rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)]">
@@ -441,7 +414,7 @@ function YouLeadsTimeline() {
             We take your ideas and analyze them thoroughly based on our experience and existing market standards.
           </p>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }
